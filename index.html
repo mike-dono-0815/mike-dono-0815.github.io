@@ -3,50 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Donoser, Ph.D. — Director of Science at Amazon</title>
+  <!--
+    This is the domain-level home page of mike-dono-0815.github.io.
+    Google reads the site name ONLY from this root URL (never from /homepage/).
+    Keep it a real, indexable page: no meta refresh, no JS redirect,
+    self-referencing canonical, and the WebSite JSON-LD below.
+  -->
+  <title>Michael Donoser</title>
   <meta name="description" content="Michael Donoser, Ph.D., Director of Science at Amazon. Computer vision researcher with h-index 27 and 3,200+ citations.">
   <meta name="author" content="Michael Donoser">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://mike-dono-0815.github.io/homepage/">
-
-  <!-- Redirect immediately -->
-  <meta http-equiv="refresh" content="0; url=https://mike-dono-0815.github.io/homepage/">
+  <link rel="canonical" href="https://mike-dono-0815.github.io/">
+  <link rel="icon" href="https://mike-dono-0815.github.io/homepage/favicon.svg" type="image/svg+xml">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="profile">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://mike-dono-0815.github.io/">
-  <meta property="og:title" content="Michael Donoser, Ph.D. — Director of Science at Amazon">
+  <meta property="og:site_name" content="Michael Donoser">
+  <meta property="og:title" content="Michael Donoser">
   <meta property="og:description" content="Computer vision researcher, h-index 27, 3,200+ citations. Director of Science at Amazon.">
   <meta property="og:image" content="https://mike-dono-0815.github.io/homepage/img/profile.png">
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: WebSite (drives the site name shown in Google) + Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Michael Donoser",
-    "honorificSuffix": "Ph.D.",
-    "jobTitle": "Director of Science",
-    "worksFor": { "@type": "Organization", "name": "Amazon" },
-    "url": "https://mike-dono-0815.github.io/homepage/",
-    "sameAs": [
-      "https://www.linkedin.com/in/michael-donoser",
-      "https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en",
-      "https://www.researchgate.net/profile/Michael-Donoser",
-      "https://github.com/mike-dono-0815",
-      "https://medium.com/@michael.donoser"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mike-dono-0815.github.io/#website",
+        "name": "Michael Donoser",
+        "alternateName": ["Michael Donoser, Ph.D.", "Michael Donoser Homepage"],
+        "url": "https://mike-dono-0815.github.io/",
+        "publisher": { "@id": "https://mike-dono-0815.github.io/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://mike-dono-0815.github.io/#person",
+        "name": "Michael Donoser",
+        "honorificSuffix": "Ph.D.",
+        "jobTitle": "Director of Science",
+        "worksFor": { "@type": "Organization", "name": "Amazon" },
+        "url": "https://mike-dono-0815.github.io/homepage/",
+        "image": "https://mike-dono-0815.github.io/homepage/img/profile.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/michael-donoser",
+          "https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en",
+          "https://www.researchgate.net/profile/Michael-Donoser",
+          "https://github.com/mike-dono-0815",
+          "https://medium.com/@michael.donoser"
+        ]
+      }
     ]
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #0a0a0a; color: #fff; }
-    p { text-align: center; opacity: 0.6; }
-    a { color: #fff; }
+    :root { --navy-900: #0b1828; --navy-700: #1a3050; --gold: #c8920c; --gold-light: #e8ac20; --text-light: #e2e8f0; --text-dim: #94a3b8; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center;
+      padding: 48px 24px; background: var(--navy-900); color: var(--text-light);
+      font-family: 'Inter', system-ui, sans-serif; line-height: 1.6;
+    }
+    main { max-width: 640px; margin: 0 auto; width: 100%; }
+    .eyebrow { color: var(--gold-light); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 16px; }
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(2.6rem, 8vw, 4rem); line-height: 1.05; margin: 0 0 20px; color: #fff; }
+    p.lead { color: var(--text-dim); font-size: 1.05rem; margin: 0 0 32px; }
+    .cta {
+      display: inline-block; background: var(--gold); color: var(--navy-900); text-decoration: none;
+      font-weight: 600; padding: 12px 24px; border-radius: 6px; transition: background 0.2s;
+    }
+    .cta:hover, .cta:focus-visible { background: var(--gold-light); }
+    nav ul { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 8px 24px; border-top: 1px solid var(--navy-700); padding-top: 24px; }
+    nav a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover, nav a:focus-visible { color: var(--gold-light); }
   </style>
 </head>
 <body>
-  <p>Redirecting to <a href="https://mike-dono-0815.github.io/homepage/">Michael Donoser's homepage</a>…</p>
-  <script>window.location.replace("https://mike-dono-0815.github.io/homepage/");</script>
+  <main>
+    <p class="eyebrow">Director of Science &middot; Amazon</p>
+    <h1>Michael Donoser</h1>
+    <p class="lead">Computer vision and generative AI researcher (Ph.D., h-index 27, 3,200+ citations), building systems that ship to Amazon customers, and coaching the next generation of tech leaders.</p>
+    <a class="cta" href="/homepage/">Visit my homepage &rarr;</a>
+    <nav aria-label="Quick links">
+      <ul>
+        <li><a href="/homepage/#publications">Publications</a></li>
+        <li><a href="/homepage/#book">Book</a></li>
+        <li><a href="/homepage/CV_Michael_Donoser.pdf">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/michael-donoser">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/mike-dono-0815">GitHub</a></li>
+      </ul>
+    </nav>
+  </main>
 </body>
 </html>
